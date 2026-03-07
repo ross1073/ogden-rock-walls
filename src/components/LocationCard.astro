@@ -1,0 +1,14 @@
+---
+interface Props {
+  city: string;
+  href: string;
+}
+
+const { city, href } = Astro.props;
+---
+
+<a href={href} class="group block bg-charcoal rounded px-4 py-3 border border-charcoal-light hover:border-gold transition-all duration-200 text-center">
+  <span class="text-gray-200 group-hover:text-gold transition-colors font-medium text-sm">
+    {city}, UT
+  </span>
+</a>

@@ -1,0 +1,46 @@
+---
+import business from '../data/business.json';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const allItems = [{ label: 'Home', href: '/' }, ...items];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": allItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    "item": `${business.url}${item.href}`
+  }))
+};
+---
+
+<nav aria-label="Breadcrumb" class="bg-charcoal-light">
+  <div class="max-w-7xl mx-auto px-4 py-3">
+    <ol class="flex flex-wrap items-center gap-1.5 text-sm">
+      {allItems.map((item, i) => (
+        <li class="flex items-center gap-1.5">
+          {i > 0 && <span class="text-gray-500">/</span>}
+          {i < allItems.length - 1 ? (
+            <a href={item.href} class="text-gray-400 hover:text-gold transition-colors">{item.label}</a>
+          ) : (
+            <span class="text-gold">{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

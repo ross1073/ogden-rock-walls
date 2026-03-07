@@ -1,0 +1,123 @@
+---
+import business from '../data/business.json';
+
+const serviceLinks = [
+  { name: 'Rock & Boulder Retaining Walls', href: '/services/rock-boulder-retaining-walls' },
+  { name: 'Concrete Block Retaining Walls', href: '/services/concrete-block-retaining-walls' },
+  { name: 'Retaining Wall Repair', href: '/services/retaining-wall-repair' },
+  { name: 'Drainage Solutions', href: '/services/drainage-solutions' },
+  { name: 'Erosion Control', href: '/services/erosion-control' },
+  { name: 'Landscape Grading', href: '/services/landscape-grading' },
+  { name: 'Commercial Projects', href: '/services/commercial-projects' },
+];
+
+const weberCounty = [
+  { name: 'North Ogden', href: '/locations/north-ogden' },
+  { name: 'South Ogden', href: '/locations/south-ogden' },
+  { name: 'Roy', href: '/locations/roy' },
+  { name: 'West Haven', href: '/locations/west-haven' },
+  { name: 'Plain City', href: '/locations/plain-city' },
+  { name: 'Riverdale', href: '/locations/riverdale' },
+  { name: 'Washington Terrace', href: '/locations/washington-terrace' },
+  { name: 'Eden', href: '/locations/eden' },
+  { name: 'Huntsville', href: '/locations/huntsville' },
+];
+
+const davisCounty = [
+  { name: 'Layton', href: '/locations/layton' },
+  { name: 'Clearfield', href: '/locations/clearfield' },
+  { name: 'Syracuse', href: '/locations/syracuse' },
+  { name: 'Kaysville', href: '/locations/kaysville' },
+  { name: 'Farmington', href: '/locations/farmington' },
+  { name: 'Bountiful', href: '/locations/bountiful' },
+];
+
+const otherAreas = [
+  { name: 'Brigham City', href: '/locations/brigham-city' },
+  { name: 'Perry', href: '/locations/perry' },
+  { name: 'Morgan', href: '/locations/morgan' },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-charcoal-dark text-gray-300">
+  <!-- Main footer -->
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Company info -->
+      <div>
+        <h3 class="font-heading text-xl font-bold text-white mb-4">
+          OGDEN <span class="text-gold">ROCK WALLS</span>
+        </h3>
+        <p class="text-sm text-gray-400 mb-4">{business.tagline}</p>
+        <address class="not-italic text-sm space-y-2">
+          <p>{business.address.full}</p>
+          <p>
+            <a href={business.phoneTel} class="hover:text-gold transition-colors">{business.phoneFormatted}</a>
+          </p>
+          <p>
+            <a href={`mailto:${business.email}`} class="hover:text-gold transition-colors">{business.email}</a>
+          </p>
+        </address>
+        <p class="text-sm mt-3">{business.hours.display}</p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="font-heading text-lg font-bold text-white mb-4">Our Services</h3>
+        <ul class="space-y-1.5">
+          {serviceLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-gold transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Weber County -->
+      <div>
+        <h3 class="font-heading text-lg font-bold text-white mb-4">Weber County</h3>
+        <ul class="space-y-1.5">
+          {weberCounty.map(link => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-gold transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Davis & Other -->
+      <div>
+        <h3 class="font-heading text-lg font-bold text-white mb-4">Davis County</h3>
+        <ul class="space-y-1.5 mb-6">
+          {davisCounty.map(link => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-gold transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+        <h3 class="font-heading text-lg font-bold text-white mb-4">Other Areas</h3>
+        <ul class="space-y-1.5">
+          {otherAreas.map(link => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-gold transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-charcoal-light">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-sm text-gray-500">
+      <p>&copy; {currentYear} {business.name}. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="/privacy" class="hover:text-gold transition-colors">Privacy Policy</a>
+        <a href="/terms" class="hover:text-gold transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
