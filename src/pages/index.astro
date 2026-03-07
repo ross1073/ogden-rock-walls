@@ -1,6 +1,144 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import LocationCard from '../components/LocationCard.astro';
+import TestimonialSection from '../components/TestimonialSection.astro';
+import CTABanner from '../components/CTABanner.astro';
+import ContactForm from '../components/ContactForm.astro';
+import business from '../data/business.json';
+
+const services = [
+  { title: 'Rock & Boulder Retaining Walls', description: 'Heavy-duty boulder walls that anchor steep slopes permanently using massive structural rocks and heavy equipment.', href: '/services/rock-boulder-retaining-walls' },
+  { title: 'Concrete Block Retaining Walls', description: 'Engineered segmental block walls for precise, clean retaining solutions on residential and commercial properties.', href: '/services/concrete-block-retaining-walls' },
+  { title: 'Retaining Wall Repair', description: 'Fix failing, leaning, or collapsed walls. We diagnose the root cause and rebuild it right — including drainage.', href: '/services/retaining-wall-repair' },
+  { title: 'Drainage Solutions', description: 'Proper drainage is the key to a wall that lasts. We install French drains, weep holes, and grading solutions.', href: '/services/drainage-solutions' },
+  { title: 'Erosion Control', description: 'Stop hillside erosion before it damages your property. Structural solutions for slopes that move.', href: '/services/erosion-control' },
+  { title: 'Landscape Grading', description: 'Proper site grading creates the foundation for retaining walls, drainage, and usable outdoor space.', href: '/services/landscape-grading' },
+  { title: 'Commercial Projects', description: 'Large-scale retaining wall systems for commercial developments, road projects, and municipal infrastructure.', href: '/services/commercial-projects' },
+];
+
+const locations = [
+  { city: 'North Ogden', href: '/locations/north-ogden' },
+  { city: 'South Ogden', href: '/locations/south-ogden' },
+  { city: 'Roy', href: '/locations/roy' },
+  { city: 'Layton', href: '/locations/layton' },
+  { city: 'Clearfield', href: '/locations/clearfield' },
+  { city: 'Syracuse', href: '/locations/syracuse' },
+  { city: 'Kaysville', href: '/locations/kaysville' },
+  { city: 'Farmington', href: '/locations/farmington' },
+  { city: 'Bountiful', href: '/locations/bountiful' },
+  { city: 'Morgan', href: '/locations/morgan' },
+  { city: 'Eden', href: '/locations/eden' },
+  { city: 'Brigham City', href: '/locations/brigham-city' },
+  { city: 'Perry', href: '/locations/perry' },
+  { city: 'West Haven', href: '/locations/west-haven' },
+  { city: 'Plain City', href: '/locations/plain-city' },
+  { city: 'Riverdale', href: '/locations/riverdale' },
+  { city: 'Washington Terrace', href: '/locations/washington-terrace' },
+  { city: 'Huntsville', href: '/locations/huntsville' },
+];
 ---
-<html lang="en">
-<head><title>Ogden Rock Walls</title></head>
-<body><h1>Ogden Rock Walls</h1></body>
-</html>
+
+<BaseLayout
+  title="Retaining Wall Contractors Ogden, UT"
+  description="Ogden's trusted retaining wall contractor. Expert repair, boulder walls & installation. Licensed, insured, 16+ years experience. Free estimates — call (385) 832-6596."
+>
+  <Header />
+  <main>
+    <Hero
+      title="Retaining Wall Contractors Ogden, UT"
+      subtitle="Professional retaining wall installation and repair backed by 16+ years of excavation expertise. Licensed, insured, and ready to tackle any slope."
+    />
+
+    <!-- Services -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-10 uppercase">
+          Our Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map(s => (
+            <ServiceCard title={s.title} description={s.description} href={s.href} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-charcoal py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-10 uppercase">
+          Why Choose Ogden Rock Walls
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">Licensed & Insured</h3>
+            <p class="text-gray-400 text-sm">Fully licensed contractor with comprehensive insurance coverage for your protection.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">16+ Years Experience</h3>
+            <p class="text-gray-400 text-sm">A division of AccuRite Excavation — over 16 years building walls across Northern Utah.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">Heavy Equipment</h3>
+            <p class="text-gray-400 text-sm">We own the excavators and machinery needed to place massive structural boulders that smaller crews can't handle.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">Free Estimates</h3>
+            <p class="text-gray-400 text-sm">We'll assess your property, discuss options, and provide a detailed quote — no cost, no obligation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <TestimonialSection />
+
+    <!-- Service Areas -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4 uppercase">
+          Serving the Greater Ogden Area
+        </h2>
+        <p class="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
+          We build and repair retaining walls across Weber, Davis, Box Elder, and Morgan counties.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {locations.map(l => (
+            <LocationCard city={l.city} href={l.href} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <CTABanner title="Get Your Free Estimate Today" subtitle="No obligation — just honest advice on your retaining wall project" />
+
+    <!-- Contact Form -->
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>
