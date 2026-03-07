@@ -1,0 +1,139 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Hero from '../../components/Hero.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import LocationCard from '../../components/LocationCard.astro';
+import business from '../../data/business.json';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map(service => ({
+    params: { slug: service.id },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { Content } = await service.render();
+
+const allServices = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const otherServices = allServices.filter(s => s.id !== service.id);
+
+const locations = [
+  { city: 'North Ogden', href: '/locations/north-ogden' },
+  { city: 'South Ogden', href: '/locations/south-ogden' },
+  { city: 'Roy', href: '/locations/roy' },
+  { city: 'Layton', href: '/locations/layton' },
+  { city: 'Clearfield', href: '/locations/clearfield' },
+  { city: 'Syracuse', href: '/locations/syracuse' },
+  { city: 'Kaysville', href: '/locations/kaysville' },
+  { city: 'Farmington', href: '/locations/farmington' },
+  { city: 'Bountiful', href: '/locations/bountiful' },
+  { city: 'Morgan', href: '/locations/morgan' },
+  { city: 'Eden', href: '/locations/eden' },
+  { city: 'Brigham City', href: '/locations/brigham-city' },
+  { city: 'Perry', href: '/locations/perry' },
+  { city: 'West Haven', href: '/locations/west-haven' },
+  { city: 'Plain City', href: '/locations/plain-city' },
+  { city: 'Riverdale', href: '/locations/riverdale' },
+  { city: 'Washington Terrace', href: '/locations/washington-terrace' },
+  { city: 'Huntsville', href: '/locations/huntsville' },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": service.data.title,
+  "description": service.data.shortDescription,
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": `${business.url}/#business`
+  },
+  "areaServed": business.serviceAreas.map((city: string) => ({
+    "@type": "City",
+    "name": city,
+    "containedInPlace": { "@type": "State", "name": "Utah" }
+  }))
+};
+---
+
+<BaseLayout
+  title={service.data.metaTitle}
+  description={service.data.metaDescription}
+  schema={[serviceSchema]}
+>
+  <Header />
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Services', href: '/services' },
+      { label: service.data.title, href: `/services/${service.id}` }
+    ]} />
+
+    <Hero title={service.data.title} subtitle={service.data.shortDescription} />
+
+    <!-- Content -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <!-- Main content -->
+          <div class="lg:col-span-2 prose prose-invert prose-gold max-w-none
+            prose-headings:font-heading prose-headings:uppercase prose-headings:text-white
+            prose-p:text-gray-300 prose-li:text-gray-300
+            prose-strong:text-white prose-a:text-gold hover:prose-a:text-gold-light">
+            <Content />
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="space-y-6">
+            <div class="bg-charcoal rounded-lg p-6 border border-charcoal-light">
+              <h3 class="font-heading text-lg font-bold text-white mb-4 uppercase">Other Services</h3>
+              <ul class="space-y-2">
+                {otherServices.map(s => (
+                  <li>
+                    <a href={`/services/${s.id}`} class="text-gray-300 hover:text-gold transition-colors text-sm">
+                      {s.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="bg-gold rounded-lg p-6">
+              <h3 class="font-heading text-lg font-bold text-charcoal-dark mb-2 uppercase">Free Estimate</h3>
+              <p class="text-charcoal text-sm mb-4">Get a no-obligation quote for your project.</p>
+              <a href="/contact" class="block text-center bg-charcoal-dark hover:bg-charcoal text-white font-bold py-2.5 px-4 rounded transition-colors text-sm">
+                Request a Quote
+              </a>
+              <a href={business.phoneTel} class="block text-center mt-2 text-charcoal-dark font-bold text-sm">
+                or call {business.phoneFormatted}
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="bg-charcoal py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-2xl font-bold text-white text-center mb-6 uppercase">
+          We Offer {service.data.title} in These Areas
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {locations.map(l => (
+            <LocationCard city={l.city} href={l.href} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>

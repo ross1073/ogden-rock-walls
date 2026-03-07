@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Our Retaining Wall Services"
+  description="Full-service retaining wall contractor in Ogden, UT. Boulder walls, block walls, repair, drainage, erosion control, grading, and commercial projects."
+>
+  <Header />
+  <main>
+    <Breadcrumbs items={[{ label: 'Services', href: '/services' }]} />
+
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-white text-center mb-4 uppercase">
+          Our Retaining Wall Services
+        </h1>
+        <p class="text-gray-400 text-center mb-12 max-w-3xl mx-auto text-lg">
+          From new construction to repairing failing walls, we handle every aspect of retaining wall work across the greater Ogden area.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map(service => (
+            <ServiceCard
+              title={service.data.title}
+              description={service.data.shortDescription}
+              href={`/services/${service.id}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>
