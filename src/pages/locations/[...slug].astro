@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import business from '../../data/business.json';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  return locations.map(location => ({
+    params: { slug: location.id },
+    props: { location },
+  }));
+}
+
+const { location } = Astro.props;
+const { Content } = await location.render();
+
+const services = [
+  { title: 'Rock & Boulder Retaining Walls', description: 'Heavy-duty boulder walls for steep slopes and large-scale retention.', href: '/services/rock-boulder-retaining-walls' },
+  { title: 'Concrete Block Retaining Walls', description: 'Engineered block walls for clean, precise retaining solutions.', href: '/services/concrete-block-retaining-walls' },
+  { title: 'Retaining Wall Repair', description: 'Fix failing, leaning, or collapsed walls — including drainage.', href: '/services/retaining-wall-repair' },
+  { title: 'Drainage Solutions', description: 'French drains, weep holes, and grading to protect your walls.', href: '/services/drainage-solutions' },
+  { title: 'Erosion Control', description: 'Structural solutions for slopes that are actively eroding.', href: '/services/erosion-control' },
+  { title: 'Landscape Grading', description: 'Site preparation and grading for walls and drainage.', href: '/services/landscape-grading' },
+  { title: 'Commercial Projects', description: 'Large-scale walls for commercial and municipal projects.', href: '/services/commercial-projects' },
+];
+
+const locationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": `${business.name} - ${location.data.city}`,
+  "description": `Professional retaining wall contractors serving ${location.data.city}, ${location.data.state}. Installation, repair, and drainage solutions.`,
+  "url": `${business.url}/locations/${location.id}`,
+  "telephone": business.phone,
+  "email": business.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": business.address.street,
+    "addressLocality": business.address.city,
+    "addressRegion": business.address.state,
+    "postalCode": business.address.zip,
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": location.data.city,
+    "containedInPlace": { "@type": "State", "name": "Utah" }
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": business.legalName
+  }
+};
+---
+
+<BaseLayout
+  title={location.data.metaTitle}
+  description={location.data.metaDescription}
+  schema={[locationSchema]}
+>
+  <Header />
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Service Areas', href: '/locations' },
+      { label: location.data.city, href: `/locations/${location.id}` }
+    ]} />
+
+    <Hero
+      title={`Retaining Wall Contractors in ${location.data.city}, UT`}
+      subtitle={`Professional retaining wall installation and repair in ${location.data.city}. ${location.data.county} County's trusted contractor with 16+ years experience.`}
+    />
+
+    <!-- Local challenges -->
+    <section class="bg-charcoal py-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-wrap justify-center gap-3">
+          {location.data.challenges.map((challenge: string) => (
+            <span class="bg-charcoal-dark text-gray-300 text-sm px-4 py-2 rounded-full border border-charcoal-light">
+              {challenge}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-4xl mx-auto prose prose-invert prose-gold
+          prose-headings:font-heading prose-headings:uppercase prose-headings:text-white
+          prose-p:text-gray-300 prose-li:text-gray-300
+          prose-strong:text-white prose-a:text-gold hover:prose-a:text-gold-light">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    {location.data.testimonial && (
+      <section class="bg-charcoal py-12">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+          <div class="text-gold text-4xl mb-4">&ldquo;</div>
+          <p class="text-gray-200 text-lg italic mb-4">{location.data.testimonial.quote}</p>
+          <p class="text-gold font-medium">— {location.data.testimonial.name}, {location.data.city}, UT</p>
+        </div>
+      </section>
+    )}
+
+    <!-- Services in this city -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl font-bold text-white text-center mb-10 uppercase">
+          Services We Offer in {location.data.city}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map(s => (
+            <ServiceCard title={s.title} description={s.description} href={s.href} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTABanner title={`Get a Free Estimate in ${location.data.city}`} subtitle="No obligation — we'll assess your property and provide honest recommendations" />
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>
