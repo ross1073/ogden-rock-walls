@@ -32,7 +32,7 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
             <ServiceCard
               title={service.data.title}
               description={service.data.shortDescription}
-              href={`/services/${service.id}`}
+              href={`/services/${service.id.replace(/\.md$/, '')}`}
             />
           ))}
         </div>

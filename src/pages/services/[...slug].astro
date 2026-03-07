@@ -13,7 +13,7 @@ import business from '../../data/business.json';
 export async function getStaticPaths() {
   const services = await getCollection('services');
   return services.map(service => ({
-    params: { slug: service.id },
+    params: { slug: service.id.replace(/\.md$/, '') },
     props: { service },
   }));
 }
@@ -71,7 +71,7 @@ const serviceSchema = {
   <main>
     <Breadcrumbs items={[
       { label: 'Services', href: '/services' },
-      { label: service.data.title, href: `/services/${service.id}` }
+      { label: service.data.title, href: `/services/${service.id.replace(/\.md$/, '')}` }
     ]} />
 
     <Hero title={service.data.title} subtitle={service.data.shortDescription} />
@@ -95,7 +95,7 @@ const serviceSchema = {
               <ul class="space-y-2">
                 {otherServices.map(s => (
                   <li>
-                    <a href={`/services/${s.id}`} class="text-gray-300 hover:text-gold transition-colors text-sm">
+                    <a href={`/services/${s.id.replace(/\.md$/, '')}`} class="text-gray-300 hover:text-gold transition-colors text-sm">
                       {s.data.title}
                     </a>
                   </li>

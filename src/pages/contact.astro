@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ContactForm from '../components/ContactForm.astro';
+import business from '../data/business.json';
+---
+
+<BaseLayout
+  title="Contact Us"
+  description="Contact Ogden Rock Walls for a free retaining wall estimate. Call (385) 832-6596 or fill out our form. Serving Ogden, UT and all surrounding areas."
+>
+  <Header />
+  <main>
+    <Breadcrumbs items={[{ label: 'Contact', href: '/contact' }]} />
+
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold text-white text-center mb-4 uppercase">Contact Us</h1>
+        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto text-lg">
+          Ready to discuss your retaining wall project? Reach out for a free, no-obligation estimate.
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact info -->
+          <div class="space-y-8">
+            <div>
+              <h2 class="font-heading text-2xl font-bold text-white mb-4 uppercase">Get in Touch</h2>
+              <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-medium">Phone</p>
+                    <a href={business.phoneTel} class="text-gold hover:text-gold-light text-lg">{business.phoneFormatted}</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-medium">Email</p>
+                    <a href={`mailto:${business.email}`} class="text-gold hover:text-gold-light">{business.email}</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-medium">Office</p>
+                    <p class="text-gray-300">{business.address.full}</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-medium">Hours</p>
+                    <p class="text-gray-300">{business.hours.display}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="rounded-lg overflow-hidden border border-charcoal-light h-64">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.5!2d-111.9738!3d41.223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2940+Midland+Dr%2C+Ogden%2C+UT+84401!5e0!3m2!1sen!2sus!4v1"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ogden Rock Walls office location"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="bg-charcoal rounded-lg p-6 border border-charcoal-light" style="min-height: 700px;">
+            <h2 class="font-heading text-2xl font-bold text-white mb-6 uppercase">Request a Free Estimate</h2>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/0FCCK6bwJLQttlSPKufv"
+              style="width:100%;height:100%;border:none;border-radius:3px"
+              id="inline-0FCCK6bwJLQttlSPKufv"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Rock Wall Opt In"
+              data-height="669"
+              data-layout-iframe-id="inline-0FCCK6bwJLQttlSPKufv"
+              data-form-id="0FCCK6bwJLQttlSPKufv"
+              title="Rock Wall Opt In"
+            ></iframe>
+            <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

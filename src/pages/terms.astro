@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import business from '../data/business.json';
+---
+
+<BaseLayout title="Terms of Service" description="Terms of service for Ogden Rock Walls website.">
+  <Header />
+  <main>
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-4xl mx-auto px-4 prose prose-invert prose-headings:font-heading prose-headings:text-white prose-p:text-gray-300">
+        <h1>Terms of Service</h1>
+        <p><em>Last updated: March 2026</em></p>
+
+        <h2>Website Use</h2>
+        <p>This website is owned and operated by {business.legalName}, doing business as {business.name}. By using this website, you agree to these terms of service.</p>
+
+        <h2>Content</h2>
+        <p>The content on this website is provided for general informational purposes about our retaining wall services. While we strive to keep the information accurate and current, we make no guarantees about the completeness or accuracy of the content.</p>
+
+        <h2>Estimates and Pricing</h2>
+        <p>Estimates provided through this website or during on-site consultations are non-binding until a formal written contract is signed. Final pricing depends on site conditions, materials, and project scope confirmed during detailed assessment.</p>
+
+        <h2>Service Area</h2>
+        <p>We serve the greater Ogden, Utah metropolitan area including Weber, Davis, Box Elder, and Morgan counties. Service availability for specific locations may vary.</p>
+
+        <h2>Limitation of Liability</h2>
+        <p>This website and its content are provided "as is" without warranties of any kind. {business.legalName} shall not be liable for any damages arising from the use of this website.</p>
+
+        <h2>Contact</h2>
+        <p>
+          {business.name}<br />
+          {business.address.full}<br />
+          <a href={business.phoneTel} class="text-gold">{business.phoneFormatted}</a><br />
+          <a href={`mailto:${business.email}`} class="text-gold">{business.email}</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

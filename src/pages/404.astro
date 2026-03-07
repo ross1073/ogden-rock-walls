@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Page Not Found" description="The page you're looking for doesn't exist.">
+  <Header />
+  <main class="flex-1 flex items-center justify-center bg-charcoal-dark py-20">
+    <div class="text-center px-4">
+      <p class="font-heading text-8xl font-bold text-gold mb-4">404</p>
+      <h1 class="font-heading text-3xl font-bold text-white mb-4 uppercase">Page Not Found</h1>
+      <p class="text-gray-400 mb-8 max-w-md mx-auto">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="inline-flex items-center justify-center bg-gold hover:bg-gold-dark text-charcoal-dark font-bold py-3 px-8 rounded transition-colors">
+          Back to Home
+        </a>
+        <a href="/contact" class="inline-flex items-center justify-center border-2 border-gold text-gold hover:bg-gold hover:text-charcoal-dark font-bold py-3 px-8 rounded transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

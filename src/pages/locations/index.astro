@@ -41,7 +41,7 @@ const countyOrder = ['Weber', 'Davis', 'Box Elder', 'Morgan'];
             <h2 class="font-heading text-2xl font-bold text-gold mb-6 uppercase">{county} County</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {counties[county].map(loc => (
-                <a href={`/locations/${loc.id}`} class="group block bg-charcoal rounded-lg p-5 border border-charcoal-light hover:border-gold transition-all duration-200">
+                <a href={`/locations/${loc.id.replace(/\.md$/, '')}`} class="group block bg-charcoal rounded-lg p-5 border border-charcoal-light hover:border-gold transition-all duration-200">
                   <h3 class="font-heading text-lg font-bold text-white group-hover:text-gold transition-colors mb-1">
                     {loc.data.city}, UT
                   </h3>

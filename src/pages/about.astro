@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Hero from '../components/Hero.astro';
+import CTABanner from '../components/CTABanner.astro';
+import ContactForm from '../components/ContactForm.astro';
+import business from '../data/business.json';
+---
+
+<BaseLayout
+  title="About Ogden Rock Walls"
+  description="Ogden Rock Walls is a division of AccuRite Excavation & Hauling, Inc. — 16+ years building retaining walls across Northern Utah. Licensed, bonded, insured."
+>
+  <Header />
+  <main>
+    <Breadcrumbs items={[{ label: 'About', href: '/about' }]} />
+    <Hero title="About Ogden Rock Walls" subtitle="A division of AccuRite Excavation & Hauling, Inc." showCTA={false} />
+
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="prose prose-invert prose-gold max-w-none prose-headings:font-heading prose-headings:uppercase prose-headings:text-white prose-p:text-gray-300">
+          <h2>Built on 16+ Years of Excavation Expertise</h2>
+          <p>
+            Ogden Rock Walls is the retaining wall division of AccuRite Excavation & Hauling, Inc., a Northern Utah excavation company that has served residential, commercial, and government clients for over 16 years.
+          </p>
+          <p>
+            We created Ogden Rock Walls to focus specifically on what we do best in the retaining wall space — building heavy-duty rock and boulder walls, installing engineered block wall systems, and repairing failing walls across Weber, Davis, Box Elder, and Morgan counties.
+          </p>
+
+          <h2>Why We're Different</h2>
+          <p>
+            Most retaining wall contractors are landscaping companies that add walls to their service list. We're the opposite — we're an excavation company that specializes in the structural side of retaining wall work. This matters because:
+          </p>
+          <ul>
+            <li><strong>We own heavy equipment.</strong> Excavators, loaders, dump trucks, and hauling rigs. We don't rent machines or subcontract earthwork — we do it ourselves, which keeps costs down and quality consistent.</li>
+            <li><strong>We understand drainage.</strong> Most wall failures trace back to water. Our excavation background means we approach every wall project as a drainage project first, structural project second.</li>
+            <li><strong>We handle the full scope.</strong> From initial excavation and grading through wall construction and finish work, one crew manages the entire project. No handoffs between subcontractors.</li>
+            <li><strong>We work in difficult terrain.</strong> Rocky ground, steep slopes, tight access, heavy clay — these are standard conditions for an excavation company. We don't shy away from challenging sites.</li>
+          </ul>
+
+          <h2>Licensed, Bonded, and Insured</h2>
+          <p>
+            AccuRite Excavation & Hauling, Inc. is a fully licensed Utah contractor with comprehensive general liability and workers' compensation insurance. We carry the bonding required for commercial and government projects. Your property and your project are protected.
+          </p>
+
+          <h2>Our Service Area</h2>
+          <p>
+            We serve the greater Ogden metropolitan area including North Ogden, South Ogden, Roy, Layton, Clearfield, Syracuse, Kaysville, Farmington, Bountiful, Morgan, Eden, Brigham City, Perry, West Haven, Plain City, Riverdale, Washington Terrace, and Huntsville.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company info -->
+    <section class="bg-charcoal py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <p class="font-heading text-4xl font-bold text-gold mb-2">16+</p>
+            <p class="text-gray-300">Years in Business</p>
+          </div>
+          <div>
+            <p class="font-heading text-4xl font-bold text-gold mb-2">19</p>
+            <p class="text-gray-300">Communities Served</p>
+          </div>
+          <div>
+            <p class="font-heading text-4xl font-bold text-gold mb-2">4</p>
+            <p class="text-gray-300">Counties Covered</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner />
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>

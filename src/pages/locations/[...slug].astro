@@ -13,7 +13,7 @@ import business from '../../data/business.json';
 export async function getStaticPaths() {
   const locations = await getCollection('locations');
   return locations.map(location => ({
-    params: { slug: location.id },
+    params: { slug: location.id.replace(/\.md$/, '') },
     props: { location },
   }));
 }
@@ -36,7 +36,7 @@ const locationSchema = {
   "@type": "LocalBusiness",
   "name": `${business.name} - ${location.data.city}`,
   "description": `Professional retaining wall contractors serving ${location.data.city}, ${location.data.state}. Installation, repair, and drainage solutions.`,
-  "url": `${business.url}/locations/${location.id}`,
+  "url": `${business.url}/locations/${location.id.replace(/\.md$/, '')}`,
   "telephone": business.phone,
   "email": business.email,
   "address": {
@@ -68,7 +68,7 @@ const locationSchema = {
   <main>
     <Breadcrumbs items={[
       { label: 'Service Areas', href: '/locations' },
-      { label: location.data.city, href: `/locations/${location.id}` }
+      { label: location.data.city, href: `/locations/${location.id.replace(/\.md$/, '')}` }
     ]} />
 
     <Hero
