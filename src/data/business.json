@@ -1,0 +1,44 @@
+{
+  "name": "Ogden Rock Walls",
+  "legalName": "AccuRite Excavation & Hauling, Inc.",
+  "tagline": "A Division of AccuRite Excavation & Hauling, Inc.",
+  "phone": "385-832-6596",
+  "phoneFormatted": "(385) 832-6596",
+  "phoneTel": "tel:+13858326596",
+  "email": "office@accuriteex.com",
+  "address": {
+    "street": "2940 Midland Dr",
+    "city": "Ogden",
+    "state": "UT",
+    "zip": "84401",
+    "full": "2940 Midland Dr, Ogden, UT 84401"
+  },
+  "geo": {
+    "latitude": 41.223,
+    "longitude": -111.9738
+  },
+  "hours": {
+    "display": "Mon-Fri: 7am-5pm | Sat: By Appointment",
+    "schema": [
+      "Mo-Fr 07:00-17:00",
+      "Sa 08:00-12:00"
+    ]
+  },
+  "yearsInBusiness": "16+",
+  "url": "https://ogdenrockwalls.com",
+  "services": [
+    "Rock & Boulder Retaining Walls",
+    "Concrete Block Retaining Walls",
+    "Retaining Wall Repair",
+    "Drainage Solutions",
+    "Erosion Control",
+    "Landscape Grading",
+    "Commercial Projects"
+  ],
+  "serviceAreas": [
+    "Ogden", "North Ogden", "South Ogden", "Roy", "Layton",
+    "Clearfield", "Syracuse", "Kaysville", "Farmington", "Bountiful",
+    "Morgan", "Eden", "Brigham City", "Perry", "West Haven",
+    "Plain City", "Riverdale", "Washington Terrace", "Huntsville"
+  ]
+}
