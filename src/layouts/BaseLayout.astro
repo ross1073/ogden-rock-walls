@@ -60,7 +60,10 @@ const localBusinessSchema = {
     "name": city,
     "containedInPlace": { "@type": "State", "name": "Utah" }
   })),
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.google.com/maps/place/AccuRite+Excavation+%26+Hauling"
+  ]
 };
 
 const allSchemas = [localBusinessSchema, ...schema];

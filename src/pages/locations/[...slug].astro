@@ -8,6 +8,7 @@ import Hero from '../../components/Hero.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import CTABanner from '../../components/CTABanner.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import FAQSection from '../../components/FAQSection.astro';
 import business from '../../data/business.json';
 
 export async function getStaticPaths() {
@@ -125,6 +126,12 @@ const locationSchema = {
         </div>
       </div>
     </section>
+
+    <FAQSection faqs={[
+      { question: `How much does a retaining wall cost in ${location.data.city}?`, answer: `Retaining wall costs in ${location.data.city} typically range from $20-$50 per square foot of wall face, depending on the wall type (boulder, block, or timber), height, and site access. We provide free on-site estimates with exact pricing for your specific project.` },
+      { question: `Do I need a permit for a retaining wall in ${location.data.city}?`, answer: `In ${location.data.county} County, retaining walls over 4 feet in height typically require a building permit and may need engineered plans. We handle the permit process and work with local engineers when required.` },
+      { question: `What type of retaining wall is best for ${location.data.city}?`, answer: `The best wall type depends on your specific site conditions. ${location.data.terrain} often calls for boulder walls on steep grades and block walls for precise height control. We assess your property's soil, drainage, and grade to recommend the most effective and cost-efficient solution.` },
+    ]} heading={`Retaining Wall FAQ — ${location.data.city}`} />
 
     <CTABanner title={`Get a Free Estimate in ${location.data.city}`} subtitle="No obligation — we'll assess your property and provide honest recommendations" />
     <ContactForm />

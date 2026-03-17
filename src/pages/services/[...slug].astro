@@ -8,6 +8,7 @@ import Hero from '../../components/Hero.astro';
 import CTABanner from '../../components/CTABanner.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import LocationCard from '../../components/LocationCard.astro';
+import FAQSection from '../../components/FAQSection.astro';
 import business from '../../data/business.json';
 
 export async function getStaticPaths() {
@@ -25,6 +26,7 @@ const allServices = (await getCollection('services')).sort((a, b) => a.data.orde
 const otherServices = allServices.filter(s => s.id !== service.id);
 
 const locations = [
+  { city: 'Ogden', href: '/locations/ogden' },
   { city: 'North Ogden', href: '/locations/north-ogden' },
   { city: 'South Ogden', href: '/locations/south-ogden' },
   { city: 'Roy', href: '/locations/roy' },
@@ -44,6 +46,46 @@ const locations = [
   { city: 'Washington Terrace', href: '/locations/washington-terrace' },
   { city: 'Huntsville', href: '/locations/huntsville' },
 ];
+
+const serviceFAQs: Record<string, {question: string, answer: string}[]> = {
+  "Rock & Boulder Retaining Walls": [
+    { question: "How much do boulder retaining walls cost in Ogden?", answer: "Boulder retaining wall costs in the Ogden area typically range from $25-$50 per square foot of wall face, depending on boulder size, wall height, and site access. We provide free on-site estimates with exact pricing for your specific project." },
+    { question: "How long do boulder retaining walls last?", answer: "Properly installed boulder retaining walls last 50-100+ years. Natural rock doesn't rot, rust, or deteriorate like timber or concrete block. The key to longevity is correct drainage installation behind the wall, which we include on every project." },
+    { question: "Do boulder retaining walls need a permit in Ogden?", answer: "In Ogden and Weber County, retaining walls over 4 feet in height typically require a building permit and may need engineered plans. We handle the permit process and work with local engineers when required." },
+  ],
+  "Concrete Block Retaining Walls": [
+    { question: "How much do block retaining walls cost in Ogden?", answer: "Concrete block retaining walls in the Ogden area typically cost $20-$40 per square foot of wall face, depending on block style, wall height, and site conditions. We provide free estimates with detailed pricing for your project." },
+    { question: "What is the maximum height for a block retaining wall?", answer: "Standard gravity block walls can reach 4-6 feet. Taller walls require geogrid soil reinforcement, which allows block walls to reach 20+ feet. Walls over 4 feet in Ogden typically need a building permit and engineered design." },
+    { question: "How long do concrete block retaining walls last?", answer: "Quality concrete block retaining walls last 50+ years when properly installed with adequate drainage. The blocks themselves are rated for extreme freeze-thaw cycles common in northern Utah winters." },
+  ],
+  "Retaining Wall Repair": [
+    { question: "How do I know if my retaining wall needs repair?", answer: "Warning signs include leaning or tilting, horizontal cracks, bulging sections, water seeping through the wall face, and soil erosion behind or beneath the wall. If you notice any of these, call for a free assessment before the damage worsens." },
+    { question: "Can a leaning retaining wall be fixed without replacing it?", answer: "It depends on the severity. Minor leaning can sometimes be corrected with soil anchors or tiebacks. Walls leaning more than 2 inches per foot of height usually need full replacement. We assess each wall individually and recommend the most cost-effective solution." },
+    { question: "What causes retaining walls to fail?", answer: "The most common cause in Ogden is poor drainage. Clay soil holds water, building hydrostatic pressure behind the wall until it pushes the wall forward. Other causes include inadequate wall design for the soil load, tree root damage, and frost heave from northern Utah winters." },
+  ],
+  "Drainage Solutions": [
+    { question: "Why is drainage important for retaining walls?", answer: "Water is the number one cause of retaining wall failure. Without proper drainage, water saturates the soil behind the wall, creating hydrostatic pressure that pushes the wall forward. Ogden's clay soil makes this especially critical because clay holds water instead of draining it." },
+    { question: "What type of drainage do you install behind retaining walls?", answer: "Every wall we build includes a French drain system with perforated pipe, filter fabric, and clean angular drain rock. We remove native clay soil from behind the wall and replace it with free-draining material. Weep holes through the wall face provide additional pressure relief." },
+    { question: "How much does a drainage system cost?", answer: "Drainage is included in every retaining wall we build — it's not an add-on. For standalone drainage projects like French drains or yard drainage systems, costs typically range from $25-$50 per linear foot depending on depth and complexity." },
+  ],
+  "Erosion Control": [
+    { question: "What causes erosion on my property in Ogden?", answer: "Ogden's steep terrain, spring snowmelt runoff, and clay soil create ideal conditions for erosion. Water flows downhill, picks up speed on steep grades, and carries away topsoil. Without intervention, erosion undermines foundations, driveways, and existing retaining walls." },
+    { question: "What is the best erosion control method for steep slopes?", answer: "For steep slopes in the Ogden area, structural retaining walls combined with proper drainage are the most permanent solution. We also use riprap, erosion control blankets, and terracing depending on the slope grade and soil conditions." },
+    { question: "Does erosion control increase property value?", answer: "Yes. Erosion control protects your home's foundation and creates usable yard space on sloped properties. Properties with properly engineered retaining walls and drainage consistently appraise higher than properties with uncontrolled slopes and erosion damage." },
+  ],
+  "Landscape Grading": [
+    { question: "What is landscape grading?", answer: "Landscape grading is the process of reshaping the terrain on your property to control water flow, create level areas, and prepare ground for construction. Proper grading directs water away from foundations and prevents pooling in your yard." },
+    { question: "How much does grading cost in Ogden?", answer: "Landscape grading in the Ogden area typically costs $1,500-$5,000 for residential projects, depending on the area size, amount of soil to move, and whether retaining walls are needed to hold the new grades. We provide free estimates." },
+    { question: "Do I need grading before building a retaining wall?", answer: "Often yes. Proper grading behind and in front of a retaining wall ensures water drains away correctly and the wall performs as designed. We handle grading and wall construction together as a complete project." },
+  ],
+  "Commercial Projects": [
+    { question: "Do you handle commercial retaining wall projects?", answer: "Yes. We build retaining walls for commercial properties, HOA developments, road construction, parking lots, and multi-unit residential projects throughout the Ogden metro area. We work with general contractors, developers, and property managers." },
+    { question: "Can you work from engineered plans?", answer: "Absolutely. We regularly build from engineer-stamped plans and work directly with geotechnical and structural engineers. For projects requiring engineered design, we can recommend local engineers we've partnered with on past projects." },
+    { question: "What is your largest retaining wall project?", answer: "We've built retaining wall systems exceeding 500 linear feet with wall heights over 15 feet for commercial and residential developments in Weber and Davis counties. Our equipment fleet handles projects of any scale." },
+  ],
+};
+
+const currentFAQs = serviceFAQs[service.data.title] || [];
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -74,7 +116,7 @@ const serviceSchema = {
       { label: service.data.title, href: `/services/${service.id.replace(/\.md$/, '')}` }
     ]} />
 
-    <Hero title={service.data.title} subtitle={service.data.shortDescription} />
+    <Hero title={`${service.data.title} in Ogden, UT`} subtitle={service.data.shortDescription} />
 
     <!-- Content -->
     <section class="bg-charcoal-dark py-16">
@@ -131,6 +173,10 @@ const serviceSchema = {
         </div>
       </div>
     </section>
+
+    {currentFAQs.length > 0 && (
+      <FAQSection faqs={currentFAQs} heading={`${service.data.title} FAQ`} />
+    )}
 
     <CTABanner />
     <ContactForm />

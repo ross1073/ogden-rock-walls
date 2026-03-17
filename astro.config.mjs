@@ -5,5 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://ogdenrockwalls.com',
   trailingSlash: 'never',
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap({
+    lastmod: new Date(),
+  })],
 });
