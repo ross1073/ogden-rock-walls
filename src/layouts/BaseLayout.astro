@@ -7,9 +7,10 @@ interface Props {
   canonicalPath?: string;
   ogImage?: string;
   schema?: object[];
+  noindex?: boolean;
 }
 
-const { title, description, canonicalPath, ogImage, schema = [] } = Astro.props;
+const { title, description, canonicalPath, ogImage, schema = [], noindex = false } = Astro.props;
 const canonicalURL = new URL(canonicalPath || Astro.url.pathname, business.url).href;
 const ogImageURL = ogImage || `${business.url}/images/og-default.jpg`;
 
@@ -77,6 +78,7 @@ const allSchemas = [localBusinessSchema, ...schema];
   <title>{title} | Ogden Rock Walls</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
 
   <!-- Open Graph -->
   <meta property="og:title" content={`${title} | Ogden Rock Walls`} />
