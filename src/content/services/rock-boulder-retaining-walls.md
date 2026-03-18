@@ -4,15 +4,15 @@ metaTitle: "Rock & Boulder Retaining Walls in Ogden, UT"
 metaDescription: "Expert rock and boulder retaining wall installation in Ogden, UT. Heavy-duty walls that anchor slopes permanently. Licensed contractor with 16+ years experience. Free estimates."
 shortDescription: "Heavy-duty boulder walls that anchor steep slopes permanently using massive structural rocks."
 order: 1
-heroImage: "/images/services/rock-boulder-hero-residential.png"
+heroImage: "/images/services/rock-boulder-hero-residential.jpg"
 images:
-  - src: "/images/services/rock-boulder-terraced-residential.png"
+  - src: "/images/services/rock-boulder-terraced-residential.jpg"
     alt: "Three-tier terraced boulder retaining wall in a residential backyard in Ogden, UT"
-  - src: "/images/services/rock-boulder-construction-residential.png"
+  - src: "/images/services/rock-boulder-construction-residential.jpg"
     alt: "Boulder retaining wall construction in progress in a residential backyard"
-  - src: "/images/services/rock-boulder-finished-residential.png"
+  - src: "/images/services/rock-boulder-finished-residential.jpg"
     alt: "Completed boulder retaining wall creating level yard space in a Utah home"
-  - src: "/images/services/rock-boulder-detail-residential.png"
+  - src: "/images/services/rock-boulder-detail-residential.jpg"
     alt: "Close-up of interlocking boulder wall with drainage gravel behind"
 ---
 
