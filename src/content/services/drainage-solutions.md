@@ -34,7 +34,7 @@ Every site is different, and we match the drainage solution to your specific con
 
 Most retaining wall failures we repair across the Ogden area share the same root cause: the original builder either skipped drainage entirely or installed it incorrectly. Common mistakes include using regular fill dirt instead of clean drain rock, placing pipe without proper slope for drainage, and backfilling with clay soil that holds water instead of releasing it.
 
-Utah's clay-heavy soils along the Wasatch Front are especially problematic. Clay expands when wet and contracts when dry, creating repeated pressure cycles that accelerate wall failure.
+Utah's [clay-heavy soils](https://geology.utah.gov/?page_id=39132) along the Wasatch Front are especially problematic. Clay expands when wet and contracts when dry, creating repeated pressure cycles that accelerate wall failure.
 
 ## Drainage for Existing Properties
 

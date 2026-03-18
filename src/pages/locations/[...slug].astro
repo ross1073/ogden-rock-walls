@@ -32,6 +32,18 @@ const services = [
   { title: 'Commercial Projects', description: 'Large-scale walls for commercial and municipal projects.', href: '/services/commercial-projects', image: '/images/services/commercial-hero.jpg' },
 ];
 
+const permitLinks: Record<string, { url: string, label: string }> = {
+  'Weber': { url: 'https://www.webercountyutah.gov/inspection/', label: 'Weber County building permits' },
+  'Davis': { url: 'https://www.daviscountyutah.gov/ced/planning/building-permits', label: 'Davis County building permits' },
+};
+
+const cityPermitLinks: Record<string, { url: string, label: string }> = {
+  'Ogden': { url: 'https://www.ogdencity.gov/183/Building-Permits-Inspections', label: 'Ogden City building permits' },
+  'Layton': { url: 'https://www.laytoncityutah.gov/LC/CD/BuildingDivision', label: 'Layton City Building Division' },
+};
+
+const permitLink = cityPermitLinks[location.data.city] || permitLinks[location.data.county];
+
 const locationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -98,6 +110,12 @@ const locationSchema = {
           prose-p:text-gray-300 prose-li:text-gray-300
           prose-strong:text-white prose-a:text-gold hover:prose-a:text-gold-light">
           <Content />
+
+          {permitLink && (
+            <p class="mt-8 text-sm">
+              Retaining walls over 4 feet in {location.data.city} typically require a building permit. Visit <a href={permitLink.url} target="_blank" rel="noopener">{permitLink.label}</a> for permit requirements and applications.
+            </p>
+          )}
         </div>
       </div>
     </section>

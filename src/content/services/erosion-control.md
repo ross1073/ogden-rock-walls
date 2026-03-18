@@ -18,7 +18,7 @@ images:
 
 ## Stopping Erosion Before It Causes Real Damage
 
-Erosion doesn't fix itself. A slope that's losing soil today will lose more next spring. In Northern Utah, the combination of snowmelt, summer storms, freeze-thaw cycles, and clay soil creates conditions that actively erode hillsides, cut into properties, and undermine structures.
+Erosion doesn't fix itself. A slope that's losing soil today will lose more next spring. In Northern Utah, the combination of snowmelt, summer storms, freeze-thaw cycles, and [expansive clay soils](https://geology.utah.gov/?page_id=39132) creates conditions that actively erode hillsides, cut into properties, and undermine structures.
 
 At Ogden Rock Walls, we approach erosion control as a structural problem. We don't just plant ground cover and hope for the best. We build retaining systems, install drainage, and regrade slopes to permanently stop soil movement.
 

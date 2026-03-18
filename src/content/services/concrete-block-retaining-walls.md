@@ -18,7 +18,7 @@ images:
 
 ## Precision-Engineered Block Walls
 
-Concrete block retaining walls — also called segmental retaining walls or SRW systems — use manufactured interlocking blocks to create clean, uniform walls with precise engineering. These systems are ideal for residential properties, commercial landscapes, and any project where a finished, consistent appearance matters.
+Concrete block retaining walls — also called [segmental retaining walls](https://www.cmha.org/building-solutions/segmental-retaining-walls/) or SRW systems — use manufactured interlocking blocks to create clean, uniform walls with precise engineering. These systems are ideal for residential properties, commercial landscapes, and any project where a finished, consistent appearance matters.
 
 We install block wall systems from leading manufacturers, engineered to handle specific soil loads and height requirements. Every installation includes proper base preparation, geogrid reinforcement where required, and integrated drainage.
 

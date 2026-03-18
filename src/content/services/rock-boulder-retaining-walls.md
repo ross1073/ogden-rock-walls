@@ -32,7 +32,7 @@ We don't just stack rocks. Our installation process follows a proven sequence th
 
 ## When You Need Boulder Walls
 
-Boulder retaining walls are the right choice when you're dealing with steep grade changes, heavy soil loads, or large-scale slope stabilization. They're common across Northern Utah properties built against the Wasatch Range foothills, where natural terrain drops can exceed 30 degrees.
+Boulder retaining walls are the right choice when you're dealing with steep grade changes, heavy soil loads, or large-scale slope stabilization. They're common across Northern Utah properties built against the Wasatch Range foothills, where [ancient Lake Bonneville deposits](https://geology.utah.gov/popular/great-salt-lake/) create challenging clay soil conditions and natural terrain drops can exceed 30 degrees.
 
 If your property has a slope that needs more than four feet of retention, boulder walls deliver the mass and structural integrity that block walls can't match at that scale.
 
