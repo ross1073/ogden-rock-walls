@@ -12,8 +12,6 @@ images:
     alt: "Riprap erosion control along a drainage channel between residential properties"
   - src: "/images/services/erosion-blanket-install.jpg"
     alt: "Erosion control blanket being installed on a freshly graded residential slope"
-  - src: "/images/services/erosion-foundation-damage.jpg"
-    alt: "Before: erosion undercutting a sidewalk and exposing a home foundation"
 ---
 
 ## Stopping Erosion Before It Causes Real Damage
