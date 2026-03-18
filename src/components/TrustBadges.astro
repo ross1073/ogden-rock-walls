@@ -1,0 +1,21 @@
+---
+const badges = [
+  { src: '/images/badges/badge-26-years.png', alt: '26+ years serving Northern Utah' },
+  { src: '/images/badges/badge-quality-guaranteed.png', alt: 'Quality guaranteed retaining wall contractor' },
+  { src: '/images/badges/badge-top-rated-blue.png', alt: 'Top rated retaining wall contractor' },
+  { src: '/images/badges/badge-locally-owned.png', alt: 'Locally owned and operated in Ogden, Utah' },
+  { src: '/images/badges/badge-utah-approved.png', alt: 'Utah approved top retaining wall contractor' },
+];
+---
+
+<section class="bg-charcoal py-8 border-y border-charcoal-light">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+      {badges.map(badge => (
+        <div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0">
+          <img src={badge.src} alt={badge.alt} class="w-full h-full object-contain" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
