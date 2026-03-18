@@ -20,7 +20,7 @@ images:
 
 Commercial retaining wall projects demand a different level of capability than residential work. Larger walls, engineered specifications, tighter timelines, coordination with other trades, and compliance with municipal codes — these projects need a contractor with heavy equipment, experienced operators, and a track record of delivering on schedule.
 
-Ogden Rock Walls, a division of AccuRite Excavation & Hauling, has served commercial, residential, and government contracts across Northern Utah for over 16 years. We have the equipment fleet, the crew, and the project management experience to handle large-scale retaining wall construction.
+Ogden Rock Walls, a division of AccuRite Excavation & Hauling, has served commercial, residential, and government contracts across Northern Utah for over 26 years. We have the equipment fleet, the crew, and the project management experience to handle large-scale retaining wall construction.
 
 ## Commercial Services
 
@@ -37,7 +37,7 @@ Ogden Rock Walls, a division of AccuRite Excavation & Hauling, has served commer
 
 **Bonded and insured** — We carry the commercial insurance and bonding required for public and private commercial projects.
 
-**Timeline reliability** — With over 16 years of commercial project experience, we understand that delays cost money. We show up when we say we will and hit our milestones.
+**Timeline reliability** — With over 26 years of commercial project experience, we understand that delays cost money. We show up when we say we will and hit our milestones.
 
 **Single-source accountability** — From excavation and grading through wall construction and finish work, one crew handles the entire scope. Fewer handoffs means fewer problems.
 

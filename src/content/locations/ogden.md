@@ -1,7 +1,7 @@
 ---
 city: "Ogden"
 metaTitle: "Retaining Wall Contractors in Ogden, UT"
-metaDescription: "Expert retaining wall builders in Ogden, UT. Rock walls, boulder walls, and block walls for Ogden's steep terrain. 16+ years experience. Call 385-832-6596."
+metaDescription: "Expert retaining wall builders in Ogden, UT. Rock walls, boulder walls, and block walls for Ogden's steep terrain. 26+ years experience. Call 385-832-6596."
 county: "Weber"
 terrain: "Steep Wasatch foothill grades with mixed clay and glacial deposits"
 challenges:
@@ -18,7 +18,7 @@ testimonial:
 
 Ogden sits where the Wasatch Front meets the valley floor, creating some of the most dramatic elevation changes of any city in Utah. From the flat streets near Union Station downtown to the steep hillside lots along Harrison Boulevard and up into the east bench, the terrain demands engineered retaining wall solutions.
 
-We have been building retaining walls across Ogden for over 16 years. We know which neighborhoods have clay problems, where the water flows during spring runoff, and which slopes need engineered walls versus simple landscape walls.
+We have been building retaining walls across Ogden for over 26 years. We know which neighborhoods have clay problems, where the water flows during spring runoff, and which slopes need engineered walls versus simple landscape walls.
 
 ## East Bench and Hillside Properties
 

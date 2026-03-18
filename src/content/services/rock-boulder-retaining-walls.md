@@ -1,15 +1,13 @@
 ---
 title: "Rock & Boulder Retaining Walls"
 metaTitle: "Rock & Boulder Retaining Walls in Ogden, UT"
-metaDescription: "Expert rock and boulder retaining wall installation in Ogden, UT. Heavy-duty walls that anchor slopes permanently. Licensed contractor with 16+ years experience. Free estimates."
+metaDescription: "Expert rock and boulder retaining wall installation in Ogden, UT. Heavy-duty walls that anchor slopes permanently. Licensed contractor with 26+ years experience. Free estimates."
 shortDescription: "Heavy-duty boulder walls that anchor steep slopes permanently using massive structural rocks."
 order: 1
 heroImage: "/images/services/rock-boulder-hero-residential.jpg"
 images:
   - src: "/images/services/rock-boulder-terraced-residential.jpg"
     alt: "Three-tier terraced boulder retaining wall in a residential backyard in Ogden, UT"
-  - src: "/images/services/rock-boulder-construction-residential.jpg"
-    alt: "Boulder retaining wall construction in progress in a residential backyard"
   - src: "/images/services/rock-boulder-finished-residential.jpg"
     alt: "Completed boulder retaining wall creating level yard space in a Utah home"
   - src: "/images/services/rock-boulder-detail-residential.jpg"
@@ -42,4 +40,4 @@ If your property has a slope that needs more than four feet of retention, boulde
 
 As a division of AccuRite Excavation & Hauling, we own the heavy machinery required for boulder wall construction. Most landscaping companies have to rent equipment or subcontract the excavation work. We handle the entire project in-house — from initial dig to final grading — which keeps costs down and quality consistent.
 
-We've been building rock walls across Ogden, Layton, Bountiful, and the surrounding communities for over 16 years. Call us for a free on-site estimate.
+We've been building rock walls across Ogden, Layton, Bountiful, and the surrounding communities for over 26 years. Call us for a free on-site estimate.

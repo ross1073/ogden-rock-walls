@@ -12,8 +12,6 @@ images:
     alt: "Completed yard drainage system with channel drain on residential patio"
   - src: "/images/services/drainage-cross-section.jpg"
     alt: "Cross-section of French drain trench showing pipe, drain rock, and filter fabric"
-  - src: "/images/services/drainage-problem.jpg"
-    alt: "Water damage from poor drainage behind a retaining wall"
 ---
 
 ## Drainage Is the Difference Between a Wall That Lasts and One That Fails
