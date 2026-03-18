@@ -4,6 +4,16 @@ metaTitle: "Concrete Block Retaining Walls in Ogden, UT"
 metaDescription: "Professional concrete block retaining wall installation in Ogden, UT. Engineered segmental walls for residential and commercial properties. Free estimates."
 shortDescription: "Engineered segmental block walls for precise, clean retaining solutions on residential and commercial properties."
 order: 2
+heroImage: "/images/services/concrete-block-hero.png"
+images:
+  - src: "/images/services/concrete-block-construction.png"
+    alt: "Workers building a concrete block retaining wall with level and string line"
+  - src: "/images/services/concrete-block-finished.png"
+    alt: "Completed concrete block retaining wall with capstones in a residential backyard"
+  - src: "/images/services/concrete-block-detail.png"
+    alt: "Close-up of interlocking block pattern with geogrid and drain rock behind wall"
+  - src: "/images/services/concrete-block-tall-engineered.png"
+    alt: "Tall 8-foot engineered concrete block retaining wall in a residential side yard"
 ---
 
 ## Precision-Engineered Block Walls

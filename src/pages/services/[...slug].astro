@@ -116,7 +116,7 @@ const serviceSchema = {
       { label: service.data.title, href: `/services/${service.id.replace(/\.md$/, '')}` }
     ]} />
 
-    <Hero title={`${service.data.title} in Ogden, UT`} subtitle={service.data.shortDescription} />
+    <Hero title={`${service.data.title} in Ogden, UT`} subtitle={service.data.shortDescription} backgroundImage={service.data.heroImage} />
 
     <!-- Content -->
     <section class="bg-charcoal-dark py-16">
@@ -128,6 +128,17 @@ const serviceSchema = {
             prose-p:text-gray-300 prose-li:text-gray-300
             prose-strong:text-white prose-a:text-gold hover:prose-a:text-gold-light">
             <Content />
+
+            {/* Service images gallery */}
+            {service.data.images && service.data.images.length > 0 && (
+              <div class="not-prose mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {service.data.images.map((img: {src: string, alt: string}) => (
+                  <div class="rounded-lg overflow-hidden border border-charcoal-light">
+                    <img src={img.src} alt={img.alt} class="w-full h-48 sm:h-56 object-cover" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <!-- Sidebar -->

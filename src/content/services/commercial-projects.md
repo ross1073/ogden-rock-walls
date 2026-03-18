@@ -4,6 +4,16 @@ metaTitle: "Commercial Retaining Wall Contractors in Ogden, UT"
 metaDescription: "Commercial retaining wall contractor in Ogden, UT. Large-scale walls for developments, roads, and infrastructure. Licensed, bonded, insured. Free estimates."
 shortDescription: "Large-scale retaining wall systems for commercial developments, road projects, and municipal infrastructure."
 order: 7
+heroImage: "/images/services/commercial-hero.png"
+images:
+  - src: "/images/services/commercial-construction.png"
+    alt: "Large-scale commercial boulder retaining wall construction at a housing development"
+  - src: "/images/services/commercial-hoa-development.png"
+    alt: "Terraced retaining wall system at a multi-unit residential development in Utah"
+  - src: "/images/services/commercial-municipal.png"
+    alt: "Tall engineered retaining wall along a municipal road in northern Utah"
+  - src: "/images/services/commercial-aerial.png"
+    alt: "Aerial view of commercial site with multiple retaining wall terraces"
 ---
 
 ## Retaining Walls for Commercial and Municipal Projects

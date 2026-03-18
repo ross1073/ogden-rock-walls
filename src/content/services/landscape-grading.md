@@ -4,6 +4,16 @@ metaTitle: "Landscape Grading Services in Ogden, UT"
 metaDescription: "Professional landscape grading in Ogden, UT. Proper site preparation for retaining walls, drainage, and usable outdoor space. Free estimates."
 shortDescription: "Proper site grading creates the foundation for retaining walls, drainage, and usable outdoor space."
 order: 6
+heroImage: "/images/services/grading-hero.png"
+images:
+  - src: "/images/services/grading-complete.png"
+    alt: "Completed landscape grading with smooth topsoil ready for sod in a Utah yard"
+  - src: "/images/services/grading-problem.png"
+    alt: "Poorly graded yard with water pooling against a house foundation"
+  - src: "/images/services/grading-new-construction.png"
+    alt: "New construction site grading with excavator shaping residential lot"
+  - src: "/images/services/grading-laser-level.png"
+    alt: "Laser level setup for precision grading on a residential property"
 ---
 
 ## The Foundation Every Project Needs
