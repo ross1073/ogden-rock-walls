@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Page Not Found" description="The page you're looking for doesn't exist.">
+<BaseLayout title="Page Not Found" description="The page you're looking for doesn't exist." noindex={true}>
   <Header />
   <main class="flex-1 flex items-center justify-center bg-charcoal-dark py-20">
     <div class="text-center px-4">

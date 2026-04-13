@@ -7,5 +7,6 @@ export default defineConfig({
   trailingSlash: 'never',
   integrations: [tailwind(), sitemap({
     lastmod: new Date(),
+    filter: (page) => !page.includes('/gallery') && !page.includes('/thank-you') && !page.includes('/404'),
   })],
 });
