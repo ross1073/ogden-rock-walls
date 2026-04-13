@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://ogdenrockwalls.com',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   integrations: [tailwind(), sitemap({
     lastmod: new Date(),
     filter: (page) => !page.includes('/thank-you') && !page.includes('/404'),
