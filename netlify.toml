@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
+# Required for trailing-slash redirect to work without loops
+[build.processing.html]
+  pretty_urls = true
+
 # Strip trailing slashes — matches Astro trailingSlash:'never' config
 # Prevents 301 redirect chains that cause "Page with redirect" in GSC
 [[redirects]]
