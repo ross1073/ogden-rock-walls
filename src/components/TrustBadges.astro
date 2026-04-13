@@ -1,10 +1,10 @@
 ---
 const badges = [
-  { src: '/images/badges/badge-26-years.png', alt: '26+ years serving Northern Utah' },
-  { src: '/images/badges/badge-quality-guaranteed.png', alt: 'Quality guaranteed retaining wall contractor' },
-  { src: '/images/badges/badge-top-rated-blue.png', alt: 'Top rated retaining wall contractor' },
-  { src: '/images/badges/badge-locally-owned.png', alt: 'Locally owned and operated in Ogden, Utah' },
-  { src: '/images/badges/badge-utah-approved.png', alt: 'Utah approved top retaining wall contractor' },
+  { src: '/images/badges/badge-26-years.webp', alt: '26+ years serving Northern Utah' },
+  { src: '/images/badges/badge-quality-guaranteed.webp', alt: 'Quality guaranteed retaining wall contractor' },
+  { src: '/images/badges/badge-top-rated-blue.webp', alt: 'Top rated retaining wall contractor' },
+  { src: '/images/badges/badge-locally-owned.webp', alt: 'Locally owned and operated in Ogden, Utah' },
+  { src: '/images/badges/badge-utah-approved.webp', alt: 'Utah approved top retaining wall contractor' },
 ];
 ---
 
@@ -13,7 +13,7 @@ const badges = [
     <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
       {badges.map(badge => (
         <div class="w-36 h-36 md:w-44 md:h-44 flex-shrink-0">
-          <img src={badge.src} alt={badge.alt} class="w-full h-full object-contain" loading="lazy" />
+          <img src={badge.src} alt={badge.alt} class="w-full h-full object-contain" loading="lazy" width="176" height="176" />
         </div>
       ))}
     </div>

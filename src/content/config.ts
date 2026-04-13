@@ -34,4 +34,18 @@ const locations = defineCollection({
   }),
 });
 
-export const collections = { services, locations };
+const blog = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    metaTitle: z.string(),
+    metaDescription: z.string(),
+    excerpt: z.string(),
+    date: z.string(),
+    author: z.string().default('Ogden Rock Walls'),
+    heroImage: z.string().optional(),
+    heroAlt: z.string().optional(),
+  }),
+});
+
+export const collections = { services, locations, blog };

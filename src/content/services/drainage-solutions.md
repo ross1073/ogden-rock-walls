@@ -4,13 +4,13 @@ metaTitle: "Retaining Wall Drainage Solutions in Ogden, UT"
 metaDescription: "Professional drainage solutions for retaining walls in Ogden, UT. French drains, weep holes, and grading to prevent wall failure. Free estimates."
 shortDescription: "Proper drainage is the key to a wall that lasts. We install French drains, weep holes, and grading solutions."
 order: 4
-heroImage: "/images/services/drainage-hero.jpg"
+heroImage: "/images/services/drainage-hero.webp"
 images:
-  - src: "/images/services/drainage-outlet-detail.jpg"
+  - src: "/images/services/drainage-outlet-detail.webp"
     alt: "Drain pipe outlet at the base of a retaining wall with water flowing"
-  - src: "/images/services/drainage-yard-complete.jpg"
+  - src: "/images/services/drainage-yard-complete.webp"
     alt: "Completed yard drainage system with channel drain on residential patio"
-  - src: "/images/services/drainage-cross-section.jpg"
+  - src: "/images/services/drainage-cross-section.webp"
     alt: "Cross-section of French drain trench showing pipe, drain rock, and filter fabric"
 ---
 

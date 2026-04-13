@@ -12,12 +12,22 @@ interface Props {
 
 const { title, description, canonicalPath, ogImage, schema = [], noindex = false } = Astro.props;
 const canonicalURL = new URL(canonicalPath || Astro.url.pathname, business.url).href;
-const ogImageURL = ogImage || `${business.url}/images/og-default.jpg`;
+const ogImageURL = ogImage || `${business.url}/images/og-default.webp`;
 
+const dayOrder = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 const dayMap: Record<string, string> = {
   Mo: "Monday", Tu: "Tuesday", We: "Wednesday",
   Th: "Thursday", Fr: "Friday", Sa: "Saturday", Su: "Sunday"
 };
+
+function expandDayRange(abbrev: string): string[] {
+  if (!abbrev.includes('-')) return [dayMap[abbrev] || abbrev];
+  const [start, end] = abbrev.split('-');
+  const startIdx = dayOrder.indexOf(start);
+  const endIdx = dayOrder.indexOf(end);
+  if (startIdx === -1 || endIdx === -1) return [abbrev];
+  return dayOrder.slice(startIdx, endIdx + 1).map(d => dayMap[d]);
+}
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -46,11 +56,18 @@ const localBusinessSchema = {
     const [opens, closes] = times.split('-');
     return {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": days.split('-').map((d: string) => dayMap[d] || d),
+      "dayOfWeek": expandDayRange(days),
       "opens": opens,
       "closes": closes
     };
   }),
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "parentOrganization": {
     "@type": "Organization",
     "name": business.legalName,

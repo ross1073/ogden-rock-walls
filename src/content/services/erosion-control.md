@@ -4,13 +4,13 @@ metaTitle: "Erosion Control Services in Ogden, UT"
 metaDescription: "Professional erosion control in Ogden, UT. Stop hillside erosion with retaining walls, grading, and drainage solutions. Protect your property — free estimates."
 shortDescription: "Stop hillside erosion before it damages your property. Structural solutions for slopes that move."
 order: 5
-heroImage: "/images/services/erosion-after.jpg"
+heroImage: "/images/services/erosion-after.webp"
 images:
-  - src: "/images/services/erosion-before.jpg"
+  - src: "/images/services/erosion-before.webp"
     alt: "Before: severe hillside erosion damage in a residential backyard"
-  - src: "/images/services/erosion-riprap.jpg"
+  - src: "/images/services/erosion-riprap.webp"
     alt: "Riprap erosion control along a drainage channel between residential properties"
-  - src: "/images/services/erosion-blanket-install.jpg"
+  - src: "/images/services/erosion-blanket-install.webp"
     alt: "Erosion control blanket being installed on a freshly graded residential slope"
 ---
 

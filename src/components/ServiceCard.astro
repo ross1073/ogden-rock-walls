@@ -12,7 +12,7 @@ const { title, description, href, image } = Astro.props;
 <a href={href} class="group block bg-charcoal rounded-lg border border-charcoal-light hover:border-gold transition-all duration-200 hover:shadow-lg hover:shadow-gold/10 overflow-hidden">
   {image && (
     <div class="h-44 overflow-hidden">
-      <img src={image} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+      <img src={image} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" width="400" height="176" />
     </div>
   )}
   <div class="p-6">

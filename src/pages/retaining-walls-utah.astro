@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TestimonialSection from '../components/TestimonialSection.astro';
+import CTABanner from '../components/CTABanner.astro';
+import ContactForm from '../components/ContactForm.astro';
+import business from '../data/business.json';
+
+const weberCounty = [
+  { city: 'Ogden', href: '/locations/ogden' },
+  { city: 'North Ogden', href: '/locations/north-ogden' },
+  { city: 'South Ogden', href: '/locations/south-ogden' },
+  { city: 'Roy', href: '/locations/roy' },
+  { city: 'West Haven', href: '/locations/west-haven' },
+  { city: 'Plain City', href: '/locations/plain-city' },
+  { city: 'Riverdale', href: '/locations/riverdale' },
+  { city: 'Washington Terrace', href: '/locations/washington-terrace' },
+  { city: 'Eden', href: '/locations/eden' },
+  { city: 'Huntsville', href: '/locations/huntsville' },
+];
+
+const davisCounty = [
+  { city: 'Layton', href: '/locations/layton' },
+  { city: 'Clearfield', href: '/locations/clearfield' },
+  { city: 'Syracuse', href: '/locations/syracuse' },
+  { city: 'Kaysville', href: '/locations/kaysville' },
+  { city: 'Farmington', href: '/locations/farmington' },
+  { city: 'Bountiful', href: '/locations/bountiful' },
+];
+
+const boxElderCounty = [
+  { city: 'Brigham City', href: '/locations/brigham-city' },
+  { city: 'Perry', href: '/locations/perry' },
+];
+
+const morganCounty = [
+  { city: 'Morgan', href: '/locations/morgan' },
+];
+
+const services = [
+  { title: 'Rock & Boulder Retaining Walls', href: '/services/rock-boulder-retaining-walls', description: 'Massive structural boulder walls for steep slopes and hillside properties.' },
+  { title: 'Concrete Block Retaining Walls', href: '/services/concrete-block-retaining-walls', description: 'Engineered segmental block systems for clean, precise retaining solutions.' },
+  { title: 'Retaining Wall Repair', href: '/services/retaining-wall-repair', description: 'Fix leaning, cracked, or collapsed walls — including root-cause drainage correction.' },
+  { title: 'Drainage Solutions', href: '/services/drainage-solutions', description: 'French drains, weep holes, and grading to protect your wall from water damage.' },
+  { title: 'Erosion Control', href: '/services/erosion-control', description: 'Stop hillside erosion before it damages your property or foundation.' },
+  { title: 'Landscape Grading', href: '/services/landscape-grading', description: 'Proper site grading for retaining walls, drainage, and usable outdoor space.' },
+  { title: 'Commercial Projects', href: '/services/commercial-projects', description: 'Large-scale retaining wall systems for developments, roads, and infrastructure.' },
+];
+
+const faqs = [
+  {
+    question: 'Do I need a permit for a retaining wall in Utah?',
+    answer: 'In most Utah cities, retaining walls over 4 feet tall require a building permit and engineered plans. Walls under 4 feet typically do not need a permit, but local codes vary. We handle the permitting process for you and know the requirements for every city we serve across Weber, Davis, and Box Elder counties.'
+  },
+  {
+    question: 'How much does a retaining wall cost in Utah?',
+    answer: 'Retaining wall costs in Northern Utah typically range from $25 to $75 per square foot depending on the wall type, height, soil conditions, and access difficulty. Boulder walls tend to be more cost-effective for large projects, while block walls offer a cleaner look for residential applications. We provide free on-site estimates with detailed pricing.'
+  },
+  {
+    question: "What type of retaining wall is best for Utah soil and climate?",
+    answer: "Utah's clay-heavy soil and freeze-thaw cycles demand walls with excellent drainage. Rock boulder walls perform exceptionally well because they allow natural water flow between boulders. Concrete block walls work great with proper French drain and backfill installation. The right choice depends on your specific slope, soil, and aesthetic preferences — we'll recommend the best option during your free estimate."
+  },
+  {
+    question: 'How long does it take to build a retaining wall?',
+    answer: "Most residential retaining walls take 2-5 days to complete once we start. Larger projects or walls requiring engineered plans may take 1-2 weeks. We own our own heavy equipment, so we don't waste time waiting on rental deliveries — and we schedule projects back-to-back to keep things moving."
+  },
+  {
+    question: 'Do you serve areas outside of Ogden?',
+    answer: "Yes. While we're based in Ogden, we serve all of Northern Utah including Weber County, Davis County, Box Elder County, and Morgan County. That covers cities from Brigham City in the north down to Bountiful in the south, and east to Morgan and Eden in the mountain valleys."
+  },
+  {
+    question: 'Why should I hire a local Utah contractor instead of a national company?',
+    answer: "Local contractors understand Utah's unique soil composition, frost depth, drainage patterns, and building codes. We've built walls across Northern Utah for over 26 years and know which solutions hold up in our climate. We're also a licensed Utah contractor with local references you can actually visit."
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="Retaining Wall Contractors Utah | Northern Utah's Trusted Builder"
+  description="Licensed retaining wall contractors serving all of Northern Utah. Boulder walls, block walls, repair & drainage across Weber, Davis & Box Elder counties. 26+ years experience. Free estimates — call (385) 832-6596."
+  canonicalPath="/retaining-walls-utah"
+  schema={[faqSchema]}
+>
+  <Header />
+  <main>
+    <Hero
+      title="Retaining Wall Contractors Serving All of Northern Utah"
+      subtitle="Licensed, insured, and backed by 26+ years of excavation expertise. We build and repair retaining walls across Weber, Davis, Box Elder, and Morgan counties."
+      backgroundImage="/images/blog-utah-hero.webp"
+    />
+
+    <Breadcrumbs items={[{ label: 'Retaining Walls Utah', href: '/retaining-walls-utah' }]} />
+
+    <!-- Intro / Service Area Overview -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-6 uppercase">
+          Northern Utah's Full-Service Retaining Wall Contractor
+        </h2>
+        <div class="max-w-4xl mx-auto text-gray-300 space-y-4 text-lg leading-relaxed">
+          <p>
+            Ogden Rock Walls — a division of <strong class="text-white">AccuRite Excavation & Hauling</strong> — has been building retaining walls across Northern Utah for over 26 years. From steep hillside boulder walls in Eden to engineered block walls in Layton subdivisions, we bring the heavy equipment, local expertise, and construction knowledge that Utah properties demand.
+          </p>
+          <p>
+            Utah's clay soils, freeze-thaw cycles, and steep Wasatch Front terrain create unique challenges for retaining walls. Walls built without proper drainage fail within years. We engineer every wall for Utah conditions — with French drains, compacted backfill, and materials rated for our climate — so your wall lasts decades, not seasons.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Counties Served -->
+    <section class="bg-charcoal py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4 uppercase">
+          Serving Weber, Davis & Box Elder Counties
+        </h2>
+        <p class="text-gray-400 text-center mb-12 max-w-3xl mx-auto">
+          We build retaining walls from Brigham City to Bountiful and everywhere in between. Click any city to see our local service page.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Weber County -->
+          <div>
+            <h3 class="font-heading text-xl font-bold text-gold mb-4 uppercase">Weber County</h3>
+            <ul class="space-y-2">
+              {weberCounty.map(loc => (
+                <li>
+                  <a href={loc.href} class="text-gray-300 hover:text-gold transition-colors text-sm flex items-center gap-2">
+                    <svg class="w-3 h-3 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" clip-rule="evenodd" />
+                    </svg>
+                    {loc.city}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Davis County -->
+          <div>
+            <h3 class="font-heading text-xl font-bold text-gold mb-4 uppercase">Davis County</h3>
+            <ul class="space-y-2">
+              {davisCounty.map(loc => (
+                <li>
+                  <a href={loc.href} class="text-gray-300 hover:text-gold transition-colors text-sm flex items-center gap-2">
+                    <svg class="w-3 h-3 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" clip-rule="evenodd" />
+                    </svg>
+                    {loc.city}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Box Elder County -->
+          <div>
+            <h3 class="font-heading text-xl font-bold text-gold mb-4 uppercase">Box Elder County</h3>
+            <ul class="space-y-2">
+              {boxElderCounty.map(loc => (
+                <li>
+                  <a href={loc.href} class="text-gray-300 hover:text-gold transition-colors text-sm flex items-center gap-2">
+                    <svg class="w-3 h-3 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" clip-rule="evenodd" />
+                    </svg>
+                    {loc.city}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Morgan County -->
+          <div>
+            <h3 class="font-heading text-xl font-bold text-gold mb-4 uppercase">Morgan County</h3>
+            <ul class="space-y-2">
+              {morganCounty.map(loc => (
+                <li>
+                  <a href={loc.href} class="text-gray-300 hover:text-gold transition-colors text-sm flex items-center gap-2">
+                    <svg class="w-3 h-3 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" clip-rule="evenodd" />
+                    </svg>
+                    {loc.city}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Retaining Walls -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-4 uppercase">
+          Retaining Wall Services We Offer in Utah
+        </h2>
+        <p class="text-gray-400 text-center mb-12 max-w-3xl mx-auto">
+          Every property is different. We offer multiple wall types and supporting services to match your terrain, budget, and goals.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map(s => (
+            <a href={s.href} class="bg-charcoal rounded-lg p-6 border border-charcoal-light hover:border-gold transition-colors group">
+              <h3 class="font-heading text-lg font-bold text-white mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+              <p class="text-gray-400 text-sm">{s.description}</p>
+              <span class="inline-block mt-3 text-gold text-sm font-medium group-hover:underline">Learn more &rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose a Local Utah Contractor -->
+    <section class="bg-charcoal py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-10 uppercase">
+          Why Choose a Local Utah Contractor
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">We Know Utah Soil</h3>
+            <p class="text-gray-400 text-sm">Utah's bentonite clay expands when wet and shrinks when dry — cracking walls that aren't designed for it. We engineer for local soil conditions on every project.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">26+ Years in Northern Utah</h3>
+            <p class="text-gray-400 text-sm">We've built walls in every city from Brigham City to Bountiful. Our portfolio includes residential yards, commercial developments, and municipal projects.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">Licensed & Insured in Utah</h3>
+            <p class="text-gray-400 text-sm">Fully licensed Utah contractor with comprehensive liability and workers' comp coverage. We pull permits, meet code, and stand behind our work.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">Own Heavy Equipment</h3>
+            <p class="text-gray-400 text-sm">We own excavators, skid steers, and hauling trucks — no rental delays. We can place 5-ton boulders that smaller landscaping crews simply can't handle.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">Built for Utah Winters</h3>
+            <p class="text-gray-400 text-sm">Freeze-thaw cycles destroy poorly built walls. We install below frost line, use proper drainage, and select materials rated for Northern Utah's temperature swings.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold text-white mb-2">Free On-Site Estimates</h3>
+            <p class="text-gray-400 text-sm">We visit your property, assess the slope and soil, discuss your options, and provide a detailed written quote — no cost, no pressure, no obligation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <TestimonialSection />
+
+    <!-- CTA Banner -->
+    <CTABanner
+      title="Get Your Free Retaining Wall Estimate"
+      subtitle="Serving all of Northern Utah — call today for honest advice on your project"
+    />
+
+    <!-- FAQ Section -->
+    <section class="bg-charcoal-dark py-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-10 uppercase">
+          Retaining Wall FAQs for Utah Homeowners
+        </h2>
+        <div class="space-y-4">
+          {faqs.map((faq, i) => (
+            <details class="bg-charcoal rounded-lg border border-charcoal-light group" open={i === 0}>
+              <summary class="cursor-pointer px-6 py-4 flex items-center justify-between text-white font-medium hover:text-gold transition-colors">
+                <span>{faq.question}</span>
+                <svg class="w-5 h-5 text-gold flex-shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-6 pb-4">
+                <p class="text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <ContactForm title="Request Your Free Utah Retaining Wall Estimate" />
+  </main>
+  <Footer />
+</BaseLayout>

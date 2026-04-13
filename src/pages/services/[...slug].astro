@@ -54,9 +54,12 @@ const serviceFAQs: Record<string, {question: string, answer: string}[]> = {
     { question: "Do boulder retaining walls need a permit in Ogden?", answer: "In Ogden and Weber County, retaining walls over 4 feet in height typically require a building permit and may need engineered plans. We handle the permit process and work with local engineers when required." },
   ],
   "Concrete Block Retaining Walls": [
-    { question: "How much do block retaining walls cost in Ogden?", answer: "Concrete block retaining walls in the Ogden area typically cost $20-$40 per square foot of wall face, depending on block style, wall height, and site conditions. We provide free estimates with detailed pricing for your project." },
-    { question: "What is the maximum height for a block retaining wall?", answer: "Standard gravity block walls can reach 4-6 feet. Taller walls require geogrid soil reinforcement, which allows block walls to reach 20+ feet. Walls over 4 feet in Ogden typically need a building permit and engineered design." },
-    { question: "How long do concrete block retaining walls last?", answer: "Quality concrete block retaining walls last 50+ years when properly installed with adequate drainage. The blocks themselves are rated for extreme freeze-thaw cycles common in northern Utah winters." },
+    { question: "How much do block retaining walls cost in Ogden?", answer: "Block retaining walls in the Ogden area typically cost $20-$40 per square foot of wall face, depending on block type, wall height, and site conditions. Segmental blocks are the most common choice. CMU walls with rebar and grout cost more but support heavier loads. We provide free estimates with detailed pricing for your project." },
+    { question: "What is the maximum height for a block retaining wall?", answer: "Standard gravity block walls can reach 4-6 feet. Taller walls require geogrid soil reinforcement, which allows block retaining walls to reach 20+ feet. Walls over 4 feet in Ogden typically need a building permit and engineered design." },
+    { question: "How long do block retaining walls last?", answer: "Quality block retaining walls last 50+ years when properly installed with adequate drainage. The blocks themselves are rated for extreme freeze-thaw cycles common in northern Utah winters." },
+    { question: "What is the difference between cinder block and segmental block retaining walls?", answer: "Cinder blocks are lightweight, hollow concrete blocks that require rebar and grout fill for structural retaining walls. Segmental retaining wall (SRW) blocks are solid, interlocking units designed specifically for retaining walls — they're heavier, lock together mechanically, and don't require mortar. For most residential retaining walls in Ogden, segmental blocks are the better choice." },
+    { question: "Do block retaining walls need drainage?", answer: "Yes — drainage is critical for any block retaining wall. Without proper drainage, water saturates the soil behind the wall and creates hydrostatic pressure that can push the wall forward. We install drain rock, perforated pipe, and filter fabric behind every block wall we build. Ogden's clay soil makes this especially important." },
+    { question: "Can you build a block retaining wall on a slope?", answer: "Yes. Block retaining walls are commonly used to create level terraces on sloped properties in the Ogden foothills. We often build stepped or tiered block walls to work with the natural grade while creating usable flat areas for landscaping, patios, or play areas." },
   ],
   "Retaining Wall Repair": [
     { question: "How do I know if my retaining wall needs repair?", answer: "Warning signs include leaning or tilting, horizontal cracks, bulging sections, water seeping through the wall face, and soil erosion behind or beneath the wall. If you notice any of these, call for a free assessment before the damage worsens." },
@@ -134,7 +137,7 @@ const serviceSchema = {
               <div class="not-prose mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.data.images.map((img: {src: string, alt: string}) => (
                   <div class="rounded-lg overflow-hidden border border-charcoal-light">
-                    <img src={img.src} alt={img.alt} class="w-full h-48 sm:h-56 object-cover" loading="lazy" />
+                    <img src={img.src} alt={img.alt} class="w-full h-48 sm:h-56 object-cover" loading="lazy" width="400" height="224" />
                   </div>
                 ))}
               </div>
@@ -171,6 +174,10 @@ const serviceSchema = {
       </div>
     </section>
 
+    {currentFAQs.length > 0 && (
+      <FAQSection faqs={currentFAQs} heading={`${service.data.title} FAQ`} />
+    )}
+
     <!-- Service Areas -->
     <section class="bg-charcoal py-12">
       <div class="max-w-7xl mx-auto px-4">
@@ -184,10 +191,6 @@ const serviceSchema = {
         </div>
       </div>
     </section>
-
-    {currentFAQs.length > 0 && (
-      <FAQSection faqs={currentFAQs} heading={`${service.data.title} FAQ`} />
-    )}
 
     <CTABanner />
     <ContactForm />

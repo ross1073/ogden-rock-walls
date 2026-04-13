@@ -4,15 +4,15 @@ metaTitle: "Retaining Wall Repair in Ogden, UT"
 metaDescription: "Expert retaining wall repair in Ogden, UT. We fix leaning, cracked, and failing walls — including the drainage problems that caused the failure. Free estimates."
 shortDescription: "Fix failing, leaning, or collapsed walls. We diagnose the root cause and rebuild it right — including drainage."
 order: 3
-heroImage: "/images/services/wall-repair-after.jpg"
+heroImage: "/images/services/wall-repair-after.webp"
 images:
-  - src: "/images/services/wall-repair-before.jpg"
+  - src: "/images/services/wall-repair-before.webp"
     alt: "Before: failing leaning retaining wall in a residential backyard needing repair"
-  - src: "/images/services/wall-repair-demolition.jpg"
+  - src: "/images/services/wall-repair-demolition.webp"
     alt: "Crew removing a collapsed retaining wall during repair project"
-  - src: "/images/services/wall-repair-drainage.jpg"
+  - src: "/images/services/wall-repair-drainage.webp"
     alt: "New drainage system being installed during retaining wall repair"
-  - src: "/images/services/wall-repair-detail-damage.jpg"
+  - src: "/images/services/wall-repair-detail-damage.webp"
     alt: "Before: close-up of cracked and water-damaged retaining wall"
 ---
 
